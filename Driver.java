@@ -12,7 +12,7 @@ public class Driver
 	    //init the rooms
         for (int i=0; i<roomCount; i++)
         {
-            rooms[i] = new Room("R"+i);
+            rooms[i] = new Room("R"+(i+1));
         }
 
         //manually set connection between rooms
