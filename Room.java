@@ -33,17 +33,17 @@ class Room
     public void display()
     {
         System.out.println("Room: " + this.name);
-        
-        //inline if statement example
-        //System.out.println("Also here: " + ((this.thePlayer != null)?this.thePlayer.getName():"nobody"));
-        if(this.thePlayer != null)
+        System.out.println("Also here: " + ((this.thePlayer != null)?this.thePlayer.getName():"nobody"));
+        System.out.println("Obvious Exits: " + getExitDirections());
+    }
+    
+    private String getExitDirections()
+    {
+        String exits = "";
+        for (int i=0; i<currNumberOfExits; i++)
         {
-            System.out.println("Also here: " + this.thePlayer.getName());
+            exits += availableExits[i].getDirection() + " ";
         }
-        else
-        {
-            System.out.println("Also here: nobody");
-
-        }
+        return exits;
     }
 }
