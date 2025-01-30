@@ -9,8 +9,6 @@ class Room
     {
         this.name = name;
         this.thePlayer = null;
-        
-        this.display(); //for testing purposes as the room is built
     }
     
     public void addExit(String direction, Room destination)
