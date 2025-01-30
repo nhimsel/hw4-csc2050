@@ -8,4 +8,14 @@ public class Exit
         this.direction = direction;
         this.destination = destination;
     }
+    
+    public String getDirection()
+    {
+        return this.direction;
+    }
+
+    public Room getDestination()
+    {
+        return this.destination;
+    }
 }
