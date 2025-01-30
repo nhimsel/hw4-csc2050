@@ -15,7 +15,7 @@ public class Driver
             rooms[i] = new Room("R"+(i+1));
         }
 
-        //manually set connection between rooms
+        //manually set the properties of rooms
 	    rooms[0].setThePlayer(p1);
 	    rooms[1].addExit("north", rooms[1]);
 	    rooms[1].addExit("north", rooms[2]);
@@ -34,11 +34,5 @@ public class Driver
         {
             rooms[i].display();
         }
-
-        /*...add the rest of the exits to all rooms
-	    ...the make each room display itself showing something like:
-	    Room: rooms[1]
-	    Also here: Mike
-	    Obvious Exits: north south*/
 	}
 }
