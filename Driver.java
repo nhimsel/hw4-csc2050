@@ -4,29 +4,40 @@ public class Driver
 	{
 	    Player p1 = new Player("Mike");
 	    Player p2 = new Player("Dave");
+
+        //init an array to hold the rooms
+        int roomCount = 6;
+        Room[] rooms = new Room[roomCount];
 	    
-	    Room r1 = new Room("R1");
-	    Room r2 = new Room("R2");
-	    Room r3 = new Room("R3");
-	    Room r4 = new Room("R4");
-	    Room r5 = new Room("R5");
-	    Room r6 = new Room("R6");
-	    
-	    r1.setThePlayer(p1);
-	    r1.addExit("north", r2);
-	    r2.addExit("north", r3);
-	    r2.addExit("south", r1);
-	    r3.addExit("north", r6);
-        r3.addExit("south", r2);
-        r3.addExit("west", r4);
-        r3.addExit("east", r5);
-        r4.addExit("east", r3);
-        r5.addExit("west", r3);
-        r6.addExit("south", r3);
+	    //init the rooms
+        for (int i=0; i<roomCount; i++)
+        {
+            rooms[i] = new Room("R"+i);
+        }
+
+        //manually set connection between rooms
+	    rooms[0].setThePlayer(p1);
+	    rooms[1].addExit("north", rooms[1]);
+	    rooms[1].addExit("north", rooms[2]);
+	    rooms[1].addExit("south", rooms[0]);
+	    rooms[2].addExit("north", rooms[5]);
+        rooms[2].addExit("south", rooms[1]);
+        rooms[2].addExit("west", rooms[3]);
+        rooms[2].addExit("east", rooms[4]);
+        rooms[3].addExit("east", rooms[2]);
+        rooms[4].addExit("west", rooms[2]);
+        rooms[5].addExit("south", rooms[2]);
+        
+
+        //display all the rooms
+        for (int i=0; i<roomCount; i++)
+        {
+            rooms[i].display();
+        }
 
         /*...add the rest of the exits to all rooms
 	    ...the make each room display itself showing something like:
-	    Room: r2
+	    Room: rooms[1]
 	    Also here: Mike
 	    Obvious Exits: north south*/
 	}
