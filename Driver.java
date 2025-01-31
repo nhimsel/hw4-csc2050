@@ -16,11 +16,11 @@ public class Driver
         }
 
         //manually set the properties of rooms
-	    rooms[0].setThePlayer(p1);
-	    rooms[1].addExit("north", rooms[1]);
-	    rooms[1].addExit("north", rooms[2]);
-	    rooms[1].addExit("south", rooms[0]);
-	    rooms[2].addExit("north", rooms[5]);
+        rooms[0].setThePlayer(p1);
+        rooms[0].addExit("north", rooms[1]);
+        rooms[1].addExit("north", rooms[2]);
+        rooms[1].addExit("south", rooms[0]);
+        rooms[2].addExit("north", rooms[5]);
         rooms[2].addExit("south", rooms[1]);
         rooms[2].addExit("west", rooms[3]);
         rooms[2].addExit("east", rooms[4]);
